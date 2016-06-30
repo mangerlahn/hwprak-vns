@@ -1,6 +1,12 @@
 CC=gcc
 CFLAGS=-Wall -O2 -g -I../common/
+
+ifneq ($(UNAME), Darwin)
+LIBS=-ll
+else
 LIBS=-lfl
+endif
+
 LDFLAGS=
 BISON=bison
 BFLAGS=-d
