@@ -1,7 +1,8 @@
 CC=gcc
 CFLAGS=-Wall -O2 -g -I../common/
 
-ifneq ($(UNAME), Darwin)
+OS := $(shell uname)
+ifeq ($(OS), Darwin)
 LIBS=-ll
 else
 LIBS=-lfl
